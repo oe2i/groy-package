@@ -21,6 +21,7 @@ composer require oe2i/groy-schema
 - [Migrations](docs/migrations.md)
 - [Facade (`SchemaX`)](docs/facade.md)
 - [Testing with Orchestra Testbench](docs/testing.md)
+- [Using as a Package Starter Kit](docs/starter-kit.md)
 - [Contributing & Releases](docs/contributing.md)
 
 ## Quick Start
@@ -28,6 +29,16 @@ composer require oe2i/groy-schema
 ```php
 use Groy\Schema\Facades\Schema as SchemaX;
 ```
+
+## Using as a Package Starter Kit
+
+Create a new Laravel 13 package from this repository:
+
+```bash
+composer create-project oe2i/groy-schema my-package
+```
+
+The `post-create-project-cmd` script (`scripts/configure.php`) will prompt for your new package name, PSR-4 namespace, and description, update all references, and remove itself automatically. See [docs/starter-kit.md](docs/starter-kit.md) for details.
 
 ## Local Development & Verification
 

@@ -141,6 +141,9 @@
       "@ci:check",
       "git push origin spartan"
     ],
-    "release": "@php scripts/release.php"
+    "release": "@php scripts/release.php",
+    "post-create-project-cmd": [
+      "@php scripts/configure.php"
+    ]
   }
 }
