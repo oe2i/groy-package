@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Groy\Schema\Tests;
+namespace Groy\Package\Tests;
 
-use Groy\Schema\Providers\SchemaServiceProvider;
+use Groy\Package\Providers\PackageServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
@@ -15,7 +15,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            SchemaServiceProvider::class,
+            PackageServiceProvider::class,
         ];
     }
 }

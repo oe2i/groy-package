@@ -11,9 +11,9 @@ $ask = static function (string $prompt, string $default): string {
     return $input !== '' ? $input : $default;
 };
 
-$package = $ask('Package name (vendor/package)', 'oe2i/groy-schema');
-$namespace = $ask('PSR-4 Namespace', 'Groy\\Schema');
-$description = $ask('Description', 'Opinionated Laravel 13 package.');
+$package = $ask('Package name (vendor/package)', 'oe2i/groy-package');
+$namespace = $ask('PSR-4 Namespace', 'Groy\\Package');
+$description = $ask('Description', 'Opinionated Laravel 13 package starter kit.');
 
 $namespaceEscaped = str_replace('\\', '\\\\', $namespace);
 $repoUrl = "https://github.com/{$package}";
@@ -22,7 +22,7 @@ $composerPath = "{$root}/composer.json";
 $composer = file_get_contents($composerPath);
 if ($composer !== false) {
     $composer = str_replace(
-        ['oe2i/groy-schema', 'Groy\\\\Schema', 'Opinionated Laravel 13 package for database schema definitions and migrations.'],
+        ['oe2i/groy-package', 'Groy\\\\Package', 'Opinionated Laravel 13 package starter kit.'],
         [$package, $namespaceEscaped, $description],
         $composer
     );
@@ -36,7 +36,7 @@ if ($composer !== false) {
 
 $files = [
     "{$root}/README.md",
-    "{$root}/src/Providers/SchemaServiceProvider.php",
+    "{$root}/src/Providers/PackageServiceProvider.php",
     "{$root}/tests/TestCase.php",
     "{$root}/tests/Pest.php",
     "{$root}/tests/Feature/ServiceProviderTest.php",
@@ -53,7 +53,7 @@ foreach ($files as $file) {
     }
 
     $content = str_replace(
-        ['oe2i/groy-schema', 'Groy\\Schema', 'https://github.com/oe2i/groy-schema'],
+        ['oe2i/groy-package', 'Groy\\Package', 'https://github.com/oe2i/groy-package'],
         [$package, $namespace, $repoUrl],
         $content
     );

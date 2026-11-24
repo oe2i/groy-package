@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Groy\Schema\Providers\SchemaServiceProvider;
+use Groy\Package\Providers\PackageServiceProvider;
 
-it('boots the schema service provider', function (): void {
-    expect(app()->getProvider(SchemaServiceProvider::class))
-        ->toBeInstanceOf(SchemaServiceProvider::class);
+it('boots the package service provider', function (): void {
+    expect(app()->getProvider(PackageServiceProvider::class))
+        ->toBeInstanceOf(PackageServiceProvider::class);
 });

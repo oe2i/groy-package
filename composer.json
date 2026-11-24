@@ -1,17 +1,16 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
-  "name": "oe2i/groy-schema",
-  "description": "Opinionated Laravel 13 package for database schema definitions and migrations.",
+  "name": "oe2i/groy-package",
+  "description": "Opinionated Laravel 13 package starter kit.",
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/oe2i/groy-schema",
+  "homepage": "https://github.com/oe2i/groy-package",
   "keywords": [
     "oe2i",
     "groy",
     "laravel",
-    "schema",
-    "database",
-    "migrations"
+    "package",
+    "starter-kit"
   ],
   "readme": "README.md",
   "authors": [
@@ -30,8 +29,8 @@
   ],
   "support": {
     "email": "hi@oe2i.com",
-    "issues": "https://github.com/oe2i/groy-schema/issues",
-    "source": "https://github.com/oe2i/groy-schema"
+    "issues": "https://github.com/oe2i/groy-package/issues",
+    "source": "https://github.com/oe2i/groy-package"
   },
   "prefer-stable": true,
   "minimum-stability": "stable",
@@ -68,22 +67,19 @@
   },
   "autoload": {
     "psr-4": {
-      "Groy\\Schema\\": "src/"
+      "Groy\\Package\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Groy\\Schema\\Tests\\": "tests/"
+      "Groy\\Package\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Groy\\Schema\\Providers\\SchemaServiceProvider"
-      ],
-      "aliases": {
-        "SchemaX": "Groy\\Schema\\Facades\\Schema"
-      }
+        "Groy\\Package\\Providers\\PackageServiceProvider"
+      ]
     }
   },
   "config": {

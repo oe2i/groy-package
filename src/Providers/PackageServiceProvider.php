@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Groy\Schema\Providers;
+namespace Groy\Package\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class SchemaServiceProvider extends ServiceProvider
+class PackageServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

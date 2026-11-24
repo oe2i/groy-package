@@ -1,6 +1,6 @@
-# Groy Schema (`oe2i/groy-schema`)
+# Groy Package (`oe2i/groy-package`)
 
-An opinionated Laravel 13 package for database schema definitions and migrations.
+An opinionated Laravel 13 package starter kit.
 
 ## Requirements
 
@@ -9,36 +9,21 @@ An opinionated Laravel 13 package for database schema definitions and migrations
 
 ## Installation
 
+Create a new Laravel 13 package from this starter kit:
+
 ```bash
-composer require oe2i/groy-schema
+composer create-project oe2i/groy-package my-package
 ```
+
+The `post-create-project-cmd` script (`scripts/configure.php`) will prompt for your new package name, PSR-4 namespace, and description, update all references, and remove itself automatically. See [docs/starter-kit.md](docs/starter-kit.md) for details.
 
 ## Documentation
 
 - [Installation & Setup](docs/installation.md)
 - [Configuration](docs/configuration.md)
-- [Schema Definitions](docs/schema-definitions.md)
-- [Migrations](docs/migrations.md)
-- [Facade (`SchemaX`)](docs/facade.md)
 - [Testing with Orchestra Testbench](docs/testing.md)
 - [Using as a Package Starter Kit](docs/starter-kit.md)
 - [Contributing & Releases](docs/contributing.md)
-
-## Quick Start
-
-```php
-use Groy\Schema\Facades\Schema as SchemaX;
-```
-
-## Using as a Package Starter Kit
-
-Create a new Laravel 13 package from this repository:
-
-```bash
-composer create-project oe2i/groy-schema my-package
-```
-
-The `post-create-project-cmd` script (`scripts/configure.php`) will prompt for your new package name, PSR-4 namespace, and description, update all references, and remove itself automatically. See [docs/starter-kit.md](docs/starter-kit.md) for details.
 
 ## Local Development & Verification
 
@@ -47,7 +32,7 @@ The `post-create-project-cmd` script (`scripts/configure.php`) will prompt for y
    composer install
    ```
 2. **Verify Orchestra Testbench & Pest**:
-   - Ensure `tests/TestCase.php` extends `Orchestra\Testbench\TestCase` and registers `Groy\Schema\Providers\SchemaServiceProvider` in `getPackageProviders()`.
+   - Ensure `tests/TestCase.php` extends `Orchestra\Testbench\TestCase` and registers `Groy\Package\Providers\PackageServiceProvider` in `getPackageProviders()`.
    - Run the test suite:
      ```bash
      composer ao:pest
