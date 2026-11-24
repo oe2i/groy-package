@@ -107,7 +107,10 @@
       "composer outdated --ansi",
       "composer show --tree --ansi"
     ],
-    "ao:coverage": "./vendor/bin/pest --coverage",
+    "ao:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "./vendor/bin/pest --coverage"
+    ],
     "ao:parallel": "./vendor/bin/pest --parallel",
     "ao:pest": "./vendor/bin/pest",
     "ao:tia": "./vendor/bin/pest --parallel --tia",
