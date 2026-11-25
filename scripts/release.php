@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$allowedBranch = 'main';
+$allowedBranch = 'spartan';
 $currentBranch = trim((string) shell_exec('git rev-parse --abbrev-ref HEAD'));
 
 if ($currentBranch !== $allowedBranch) {

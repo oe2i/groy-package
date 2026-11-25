@@ -9,7 +9,7 @@ composer oe:ci
 
 ## Releases
 
-Releases are created from `main` using:
+Releases are created from `spartan` using:
 
 ```bash
 composer release -- <major|minor|patch>

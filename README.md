@@ -57,12 +57,12 @@ composer ao:rector-dry  # Dry-run Rector
 composer ao:profanity   # Profanity check
 composer ao:check       # Validate composer.json, platform reqs, audit, outdated
 composer oe:ci          # Full CI check
-composer release        # Create a tag / GitHub release (run from main)
+composer release        # Create a tag / GitHub release (run from spartan)
 ```
 
 ### Releases
 
-Run releases from the `main` branch:
+Run releases from the `spartan` branch:
 
 ```bash
 composer release -- <major|minor|patch> [--alpha|--beta|--rc]
