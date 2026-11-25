@@ -4,7 +4,7 @@
 
 ```bash
 composer install
-composer ci:check
+composer oe:ci
 ```
 
 ## Releases

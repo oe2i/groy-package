@@ -27,4 +27,4 @@ jobs:
         run: composer install --no-interaction --prefer-dist --no-progress
 
       - name: Run CI Checks
-        run: composer ci:check
+        run: composer oe:ci

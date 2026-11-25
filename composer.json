@@ -91,50 +91,50 @@
     "sort-packages": true
   },
   "scripts": {
-    "ao:check": [
+    "oe:check": [
       "composer --version --ansi",
       "composer validate --strict --ansi",
       "composer check-platform-reqs --ansi",
       "composer audit --ansi",
       "composer outdated --direct --ansi"
     ],
-    "ao:health": [
+    "oe:health": [
       "composer diagnose --ansi",
       "composer outdated --ansi",
       "composer show --tree --ansi"
     ],
-    "ao:coverage": [
+    "oe:coverage": [
       "@putenv XDEBUG_MODE=coverage",
       "./vendor/bin/pest --coverage"
     ],
-    "ao:parallel": "./vendor/bin/pest --parallel",
-    "ao:pest": "./vendor/bin/pest",
-    "ao:tia": "./vendor/bin/pest --parallel --tia",
-    "ao:pint": "./vendor/bin/pint --parallel",
-    "ao:pint-check": "./vendor/bin/pint --test",
-    "ao:profanity": "./vendor/bin/pest --profanity src tests",
-    "ao:rector": "./vendor/bin/rector",
-    "ao:rector-dry": "./vendor/bin/rector process --dry-run",
-    "ao:stan": "./vendor/bin/phpstan analyse --memory-limit=2G",
-    "ao:type": "./vendor/bin/pest --type-coverage --memory-limit=2G --min=90 --coverage-filter=src",
-    "ao:test": [
+    "oe:parallel": "./vendor/bin/pest --parallel",
+    "oe:pest": "./vendor/bin/pest",
+    "oe:tia": "./vendor/bin/pest --parallel --tia",
+    "oe:pint": "./vendor/bin/pint --parallel",
+    "oe:pint-check": "./vendor/bin/pint --test",
+    "oe:profanity": "./vendor/bin/pest --profanity src tests",
+    "oe:rector": "./vendor/bin/rector",
+    "oe:rector-dry": "./vendor/bin/rector process --dry-run",
+    "oe:stan": "./vendor/bin/phpstan analyse --memory-limit=2G",
+    "oe:type": "./vendor/bin/pest --type-coverage --memory-limit=2G --min=90 --coverage-filter=src",
+    "oe:test": [
       "@php -r \"print(PHP_EOL.'▶ Running profanity check…'.PHP_EOL);\"",
-      "@ao:profanity",
+      "@oe:profanity",
       "@php -r \"print(PHP_EOL.'▶ Running type coverage...'.PHP_EOL);\"",
-      "@ao:type",
+      "@oe:type",
       "@php -r \"print(PHP_EOL.'▶ Running tests and coverage…'.PHP_EOL);\"",
-      "@ao:coverage",
+      "@oe:coverage",
       "@php -r \"print(PHP_EOL.'▶ Running pint…'.PHP_EOL);\"",
-      "@ao:pint",
+      "@oe:pint",
       "@php -r \"print(PHP_EOL.'▶ Running phpstan…'.PHP_EOL);\"",
-      "@ao:stan"
+      "@oe:stan"
     ],
-    "ci:check": [
+    "oe:ci": [
       "Composer\\Config::disableProcessTimeout",
-      "@ao:test"
+      "@oe:test"
     ],
     "push:spartan": [
-      "@ci:check",
+      "@oe:ci",
       "git push origin spartan"
     ],
     "release": "@php scripts/release.php",

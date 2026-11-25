@@ -20,5 +20,5 @@ composer ao:pest
 composer ao:stan       # PHPStan / Larastan
 composer ao:pint-check # Laravel Pint style check
 composer ao:type       # Pest type coverage
-composer ci:check      # Full CI suite
+composer oe:ci         # Full CI suite
 ```

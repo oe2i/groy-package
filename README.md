@@ -56,9 +56,29 @@ composer ao:rector      # Run Rector
 composer ao:rector-dry  # Dry-run Rector
 composer ao:profanity   # Profanity check
 composer ao:check       # Validate composer.json, platform reqs, audit, outdated
-composer ci:check       # Full CI check
-composer release        # Run release script
+composer oe:ci          # Full CI check
+composer release        # Create a tag / GitHub release (run from main)
 ```
+
+### Releases
+
+Run releases from the `main` branch:
+
+```bash
+composer release -- <major|minor|patch> [--alpha|--beta|--rc]
+```
+
+**When to use each bump:**
+- **`patch`** (`v1.0.1`): Backwards-compatible bug fixes. Creates a git tag only (Composer installs it automatically).
+- **`minor`** (`v1.1.0`): Backwards-compatible new features. Creates a git tag and a GitHub Release marked as **Latest**.
+- **`major`** (`v2.0.0`): Breaking changes. Creates a git tag and a GitHub Release marked as **Latest**.
+
+**Pre-release flags (optional with `major`, `minor`, or `patch`):**
+- **`--alpha`** (`v1.1.0-alpha.1`): Early/experimental work that may still change.
+- **`--beta`** (`v1.1.0-beta.1`): Feature-complete, undergoing testing and stabilization.
+- **`--rc`** (`v1.1.0-rc.1`): Release Candidate—ready for final verification before stable.
+
+Pre-releases create a GitHub Release flagged as **Pre-release** (never **Latest**). Running the same pre-release flag again increments its counter (e.g. `-alpha.1` → `-alpha.2`), and running without a pre-release flag promotes it to the stable version (e.g. `v1.1.0-rc.1` → `v1.1.0`).
 
 ## License
 
