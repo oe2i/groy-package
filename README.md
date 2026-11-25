@@ -62,7 +62,10 @@ composer release        # Create a tag / GitHub release (run from spartan)
 
 ### Releases
 
-Run releases from the `spartan` branch:
+**Workflow:**
+1. Develop and commit changes on `develop`.
+2. Merge `develop` into `spartan` when ready to release (or use `composer push:spartan` to run `oe:ci` before pushing).
+3. Run `composer release` from `spartan` to create the version tag and GitHub Release:
 
 ```bash
 composer release -- <major|minor|patch> [--alpha|--beta|--rc]
